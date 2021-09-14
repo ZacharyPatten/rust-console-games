@@ -16,7 +16,7 @@
 |Game|\*Complexity|Notes|
 |:-|:-|:-|
 |[Rock Paper Scissors](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/rock-paper-scissors)|0||
-|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|1||
+<!--|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|1||-->
 
 _\***Complexity**: a relative rating for how complex/advanced the source code is._
 
