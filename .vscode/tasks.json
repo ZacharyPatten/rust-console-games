@@ -3,6 +3,17 @@
 	"tasks":
 	[
 		{
+			"label": "cargo build setup-launch-json",
+			"group": "build",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["build"],
+			"options":
+			{
+				"cwd": "${workspaceFolder}/.vscode/setup-launch-json"
+			}
+		},
+		{
 			"label": "cargo build rock-paper-scissors",
 			"group": "build",
 			"type": "shell",
