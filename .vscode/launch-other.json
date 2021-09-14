@@ -3,18 +3,6 @@
 	"configurations":
 	[
 		{
-			"name": "Setup launch.json",
-			"type": "lldb",
-			"request": "launch",
-			"preLaunchTask": "cargo build setup-lauch-json",
-			"program": "${workspaceRoot}/.vscode/setup-lauch-json/target/debug/setup-lauch-json",
-			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}",
-			"environment": [],
-			"console": "externalTerminal"
-		},
-		{
 			"name": "Rock Paper Scissors",
 			"type": "lldb",
 			"request": "launch",
