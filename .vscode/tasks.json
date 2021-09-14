@@ -1,0 +1,28 @@
+{
+	"version": "2.0.0",
+	"tasks":
+	[
+		{
+			"label": "cargo build rock-paper-scissors",
+			"group": "build",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["build"],
+			"options":
+			{
+				"cwd": "${workspaceFolder}/games/rock-paper-scissors"
+			}
+		},
+		{
+			"label": "cargo build tic-tac-toe",
+			"group": "build",
+			"type": "shell",
+			"command": "cargo",
+			"args": ["build"],
+			"options":
+			{
+				"cwd": "${workspaceFolder}/games/tic-tac-toe"
+			}
+		}
+	]
+}
