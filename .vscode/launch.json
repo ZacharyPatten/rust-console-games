@@ -15,6 +15,18 @@
 			"console": "externalTerminal"
 		},
 		{
+			"name": "Simon",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"preLaunchTask": "cargo build simon",
+			"program": "${workspaceRoot}/games/simon/target/debug/simon.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceRoot}/games/simon/target/debug/",
+			"environment": [],
+			"console": "externalTerminal"
+		},
+		{
 			"name": "Tic Tac Toe",
 			"type": "cppvsdbg",
 			"request": "launch",

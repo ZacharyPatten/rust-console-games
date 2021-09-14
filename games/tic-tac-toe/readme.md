@@ -50,4 +50,4 @@ X Wins (Diagonal):
 
 ## Input
 
-The **arrow keys (↑, ↓, ←, →)** are used to change the selected cell on the grid. The **enter** key is used to mark the selected cell with your mark. The **escape** key may be used to close the game at any time. If you **resize** the console widow the game will be closed.
+_todo_

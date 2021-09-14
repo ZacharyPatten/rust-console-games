@@ -15,14 +15,17 @@
 
 |Game|\*Complexity|Notes|
 |:-|:-|:-|
-|[Rock Paper Scissors](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/rock-paper-scissors)|0|_TODO_|
-<!--|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|1|_TODO_|-->
+|[Rock Paper Scissors](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/rock-paper-scissors)|0||
+|[Simon](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/simon)|1||
+<!--|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|1||-->
 
 _\***Complexity**: a relative rating for how complex/advanced the source code is._
 
 ## Getting Started
 
-_TODO_
+_More documentation to be added soon._
+
+This repo is ready to use with Visual Studio Code on Windows. A `.vscode` folder is included. Open the root folder of this repo in Visual Studio Code and you should be prompted to install the necesary extensions, and the debug view should be populated with the games. Visual Studio Code tasks to `cargo build` each game should also be included
 
 ## Related Repos
 
