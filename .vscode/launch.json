@@ -6,13 +6,11 @@
 			"name": "Setup launch.json",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"preLaunchTask": "cargo build setup-launch-json",
-			"program": "${workspaceRoot}/.vscode/setup-launch-json/target/debug/setup-launch-json.exe",
-			"args": [],
+			"program": "cargo",
+			"args": ["run"],
 			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}/.vscode/setup-launch-json/target/debug/",
+			"cwd": "${workspaceRoot}/.vscode/setup-launch-json",
 			"environment": [],
-			"console": "externalTerminal"
 		},
 	]
 }
