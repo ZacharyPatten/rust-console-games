@@ -29,5 +29,5 @@ This repo is ready to use with Visual Studio Code on Windows. A `.vscode` folder
 
 ## Related Repos
 
-> - [dotnet-console-games](https://github.com/ZacharyPatten/dotnet-console-games)
-> - [dotnet-blazor-games](https://github.com/ZacharyPatten/dotnet-blazor-games)
+- [dotnet-console-games](https://github.com/ZacharyPatten/dotnet-console-games)
+- [dotnet-blazor-games](https://github.com/ZacharyPatten/dotnet-blazor-games)
