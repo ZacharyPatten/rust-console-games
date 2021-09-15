@@ -44,36 +44,43 @@ fn main()
                 Err(error) => { println!("error: {}", error); flush(); return; }
                 _ => {},
             }
-            let input_bytes = input_string.as_bytes();
-            for i in 0..pattern.len()
+            let input_bytes = input_string.trim().as_bytes();
+            lose = pattern.len() != input_bytes.len();
+            if !lose
             {
-                let pattern_i = pattern[i];
-                let input_bytes_i = char_to_u8_udlr(input_bytes[i] as char);
-                if pattern_i != input_bytes_i
+                for i in 0..pattern.len()
                 {
-                    lose = true;
-                    println!("Wrong. Score: {}", pattern.len());
-                    println!();
-                    let mut valid_input = false;
-                    while !valid_input
+                    let pattern_i = pattern[i];
+                    let input_bytes_i = char_to_u8_udlr(input_bytes[i] as char);
+                    if pattern_i != input_bytes_i
                     {
-                        print!("Play again (yes/y)? ");
-                        flush();
-                        let mut input_string = String::new();
-                        match io::stdin().read_line(&mut input_string)
-                        {
-                            Err(error) => { println!("error: {}", error); flush(); return; }
-                            _ => {},
-                        }
-                        let input = input_string.trim();
-                        match input
-                        {
-                            "yes" | "y" => { playagain = true;  valid_input = true; },
-                            "no"  | "n" => { playagain = false; valid_input = true; },
-                            _ => { println!("Invalid input. Try again..."); flush(); valid_input = false; },
-                        }
+                        lose = true;
+                        break;
                     }
-                    break;
+                }
+            }
+            if lose
+            {
+                println!("Wrong. Score: {}", pattern.len());
+                println!();
+                let mut valid_input = false;
+                while !valid_input
+                {
+                    print!("Play again (yes/no)? ");
+                    flush();
+                    let mut input_string = String::new();
+                    match io::stdin().read_line(&mut input_string)
+                    {
+                        Err(error) => { println!("error: {}", error); flush(); return; }
+                        _ => {},
+                    }
+                    let input = input_string.trim();
+                    match input
+                    {
+                        "yes" | "y" => { playagain = true;  valid_input = true; },
+                        "no"  | "n" => { playagain = false; valid_input = true; },
+                        _ => { println!("Invalid input. Try again..."); flush(); valid_input = false; },
+                    }
                 }
             }
         }
