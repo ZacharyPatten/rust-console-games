@@ -3,14 +3,40 @@
 	"configurations":
 	[
 		{
-			"name": "Setup launch.json",
+			"name": "Rock Paper Scissors",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"program": "cargo",
-			"args": ["run"],
+			"preLaunchTask": "cargo build rock-paper-scissors",
+			"program": "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors.exe",
+			"args": [],
 			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}/.vscode/setup-launch-json",
+			"cwd": "${workspaceRoot}/games/rock-paper-scissors/target/debug/",
 			"environment": [],
+			"console": "externalTerminal"
 		},
+		{
+			"name": "Simon",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"preLaunchTask": "cargo build simon",
+			"program": "${workspaceRoot}/games/simon/target/debug/simon.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceRoot}/games/simon/target/debug/",
+			"environment": [],
+			"console": "externalTerminal"
+		},
+		{
+			"name": "Tic Tac Toe",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"preLaunchTask": "cargo build tic-tac-toe",
+			"program": "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceRoot}/games/tic-tac-toe/target/debug/",
+			"environment": [],
+			"console": "externalTerminal"
+		}
 	]
 }

@@ -25,7 +25,7 @@ _\***Complexity**: a relative rating for how complex/advanced the source code is
 
 _More documentation to be added soon._
 
-This repo is ready to use with Visual Studio Code on Windows. A `.vscode` folder is included. Open the root folder of this repo in Visual Studio Code and you should be prompted to install the necesary extensions, and the debug view should be populated with the games. Visual Studio Code tasks to `cargo build` each game should also be included
+This repo is ready to use with Visual Studio Code on Windows. A `.vscode` folder is included. Open the root folder of this repo in Visual Studio Code and you should be prompted to install the necesary extensions, and the debug view should be populated with the games. Visual Studio Code tasks to `cargo build` each game should also be included.
 
 ## Related Repos
 

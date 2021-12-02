@@ -62,9 +62,9 @@ fn main()
             _ => { clear(); println!("error"); flush(); return; },
         }
         println!();
-        println!("wins: {}", wins);
+        println!("wins:   {}", wins);
         println!("losses: {}", losses);
-        println!("wins: {}", draws);
+        println!("draws:  {}", draws);
         println!();
         print!("Press Enter To Continue...");
         flush();
