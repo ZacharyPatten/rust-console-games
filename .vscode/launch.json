@@ -3,40 +3,46 @@
 	"configurations":
 	[
 		{
-			"name": "Rock Paper Scissors",
-			"type": "cppvsdbg",
-			"request": "launch",
+			"name":          "Rock Paper Scissors",
+			"type":          "cppdbg",
+			"request":       "launch",
 			"preLaunchTask": "cargo build rock-paper-scissors",
-			"program": "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors.exe",
-			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}/games/rock-paper-scissors/target/debug/",
-			"environment": [],
-			"console": "externalTerminal"
+			"program":       "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors",
+			"cwd":           "${workspaceRoot}/games/rock-paper-scissors/target/debug/",
+			"console":       "externalTerminal",
+			"windows":
+			{
+				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
+				"program":   "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors.exe"
+			}
 		},
 		{
-			"name": "Simon",
-			"type": "cppvsdbg",
-			"request": "launch",
+			"name":          "Simon",
+			"type":          "cppdbg",
+			"request":       "launch",
 			"preLaunchTask": "cargo build simon",
-			"program": "${workspaceRoot}/games/simon/target/debug/simon.exe",
-			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}/games/simon/target/debug/",
-			"environment": [],
-			"console": "externalTerminal"
+			"program":       "${workspaceRoot}/games/simon/target/debug/simon",
+			"cwd":           "${workspaceRoot}/games/simon/target/debug/",
+			"console":       "externalTerminal",
+			"windows":
+			{
+				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
+				"program":   "${workspaceRoot}/games/simon/target/debug/simon.exe"
+			}
 		},
 		{
-			"name": "Tic Tac Toe",
-			"type": "cppvsdbg",
-			"request": "launch",
+			"name":          "Tic Tac Toe",
+			"type":          "cppdbg",
+			"request":       "launch",
 			"preLaunchTask": "cargo build tic-tac-toe",
-			"program": "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe.exe",
-			"args": [],
-			"stopAtEntry": false,
-			"cwd": "${workspaceRoot}/games/tic-tac-toe/target/debug/",
-			"environment": [],
-			"console": "externalTerminal"
+			"program":       "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe",
+			"cwd":           "${workspaceRoot}/games/tic-tac-toe/target/debug/",
+			"console":       "externalTerminal",
+			"windows":
+			{
+				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
+				"program":   "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe.exe"
+			}
 		}
 	]
 }

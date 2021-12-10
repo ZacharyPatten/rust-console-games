@@ -91,11 +91,11 @@ fn char_to_u8_udlr(c : char) -> u8
 {
     match c
     {
-        'u' => return 1,
-        'r' => return 2,
-        'd' => return 3,
-        'l' => return 4,
-        _   => return 0,
+        'u' => 1,
+        'r' => 2,
+        'd' => 3,
+        'l' => 4,
+        _   => 0,
     }
 }
 

@@ -15,9 +15,9 @@
 
 |Game|\*Complexity|Notes|
 |:-|:-|:-|
-|[Rock Paper Scissors](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/rock-paper-scissors)|0||
-|[Simon](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/simon)|1||
-<!--|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|1||-->
+|[Rock Paper Scissors](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/rock-paper-scissors)|0|<a href="https://github.com/ZacharyPatten/rust-console-games/actions"><img src="https://github.com/ZacharyPatten/rust-console-games/workflows/Rock%20Paper%20Scissors%20Continuous%20Integration/badge.svg" title="Goto Build" alt="Build"></a>|
+|[Simon](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/simon)|1|<a href="https://github.com/ZacharyPatten/rust-console-games/actions"><img src="https://github.com/ZacharyPatten/rust-console-games/workflows/Simon%20Continuous%20Integration/badge.svg" title="Goto Build" alt="Build"></a>|
+|[Tic Tac Toe](https://github.com/ZacharyPatten/rust-console-games/tree/main/games/tic-tac-toe)|2|<a href="https://github.com/ZacharyPatten/rust-console-games/actions"><img src="https://github.com/ZacharyPatten/rust-console-games/workflows/Tic%20Tac%20Toe%20Continuous%20Integration/badge.svg" title="Goto Build" alt="Build"></a><br/>_still in development_|
 
 _\***Complexity**: a relative rating for how complex/advanced the source code is._
 

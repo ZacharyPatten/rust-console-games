@@ -1,0 +1,21 @@
+name: Rock Paper Scissors Continuous Integration
+on:
+  push:
+    paths:
+    - 'games/rock-paper-scissors/**'
+  workflow_dispatch:
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Versions
+      run: |
+        rustc --version
+        cargo --version
+    - name: Build
+      run: cargo build --manifest-path=games/rock-paper-scissors/Cargo.toml
+    - name: Test
+      run: cargo test --manifest-path=games/rock-paper-scissors/Cargo.toml
