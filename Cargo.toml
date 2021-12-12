@@ -1,0 +1,7 @@
+[workspace]
+
+members = [
+    "games/rock-paper-scissors",
+    "games/simon",
+    "games/tic-tac-toe",
+]

@@ -7,4 +7,4 @@ edition = "2018"
 
 [dependencies]
 rand = "0.8.4"
-crossterm = "0.2.0"
+crossterm = "0.22.1"
