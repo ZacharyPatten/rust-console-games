@@ -8,10 +8,7 @@
 			"type": "shell",
 			"command": "cargo",
 			"args": ["build"],
-			"options":
-			{
-				"cwd": "${workspaceFolder}/games/rock-paper-scissors"
-			}
+			"options": { "cwd": "${workspaceFolder}/games/rock-paper-scissors" }
 		},
 		{
 			"label": "cargo build simon",
@@ -19,10 +16,7 @@
 			"type": "shell",
 			"command": "cargo",
 			"args": ["build"],
-			"options":
-			{
-				"cwd": "${workspaceFolder}/games/simon"
-			}
+			"options": { "cwd": "${workspaceFolder}/games/simon" }
 		},
 		{
 			"label": "cargo build tic-tac-toe",
@@ -30,10 +24,7 @@
 			"type": "shell",
 			"command": "cargo",
 			"args": ["build"],
-			"options":
-			{
-				"cwd": "${workspaceFolder}/games/tic-tac-toe"
-			}
+			"options": { "cwd": "${workspaceFolder}/games/tic-tac-toe" }
 		}
 	]
 }

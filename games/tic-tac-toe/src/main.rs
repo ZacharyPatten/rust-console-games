@@ -3,59 +3,59 @@ use rand::prelude::*;
 use std::io::prelude::*;
 use crossterm::event::*;
 
-static mut closeRequested : bool = false;
-static mut playerTurn : bool = true;
-static mut board : [[char; 3]; 3] = [[' '; 3]; 3];
+static mut CLOSE_REQUESTED : bool = false;
+static mut PLAYER_TURN : bool = true;
+static mut BOARD : [[char; 3]; 3] = [[' '; 3]; 3];
 
 fn main()
 {
     unsafe
     {
-        while !closeRequested
+        while !CLOSE_REQUESTED
         {
-            board = [[' '; 3]; 3];
-            while !closeRequested
+            BOARD = [[' '; 3]; 3];
+            while !CLOSE_REQUESTED
             {
-                if playerTurn
+                if PLAYER_TURN
                 {
-                    PlayerTurn();
-                    if CheckForThree('X')
+                    player_turn();
+                    if check_for_three('X')
                     {
-                        EndGame("You Win.");
+                        end_game("You Win.");
                         break;
                     }
                 }
                 else
                 {
-                    ComputerTurn();
-                    if CheckForThree('O')
+                    computer_turn();
+                    if check_for_three('O')
                     {
-                        EndGame("You Lose.");
+                        end_game("You Lose.");
                         break;
                     }
                 }
-                playerTurn = !playerTurn;
-                if CheckForFullBoard()
+                PLAYER_TURN = !PLAYER_TURN;
+                if check_for_full_board()
                 {
-                    EndGame("Draw.");
+                    end_game("Draw.");
                     break;
                 }
             }
-            if !closeRequested
+            if !CLOSE_REQUESTED
             {
                 println!();
                 println!("Play Again [enter], or quit [escape]?");
-                let mut validInput = false;
-                while !closeRequested && !validInput
+                let mut valid_input = false;
+                while !CLOSE_REQUESTED && !valid_input
                 {
                     let event = read().unwrap();
                     if event == Event::Key(KeyCode::Enter.into())
                     {
-                        validInput = true;
+                        valid_input = true;
                     }
                     if event == Event::Key(KeyCode::Esc.into())
                     {
-                        closeRequested = true;
+                        CLOSE_REQUESTED = true;
                     }
                 }
             }
@@ -63,117 +63,113 @@ fn main()
     }
 }
 
-unsafe fn PlayerTurn()
+unsafe fn player_turn()
 {
     let mut row    : usize = 0;
     let mut column : usize = 0;
     let mut moved : bool = false;
-    while !moved && !closeRequested
+    while !moved && !CLOSE_REQUESTED
     {
         clear();
-        RenderBoard();
+        render_board();
         println!();
         println!("Choose a valid position and press enter.");
         cursor(row * 4 + 1, column * 6 + 1);
         let event = read().unwrap();
-
-        if event == Event::Key(KeyCode::Left.into()) 
+        if event == Event::Key(KeyCode::Up.into()) 
         {
             if row == 0 { row = 2; }
             else { row -= 1; }
         }
-        if event == Event::Key(KeyCode::Right.into())
+        if event == Event::Key(KeyCode::Down.into())
         {
             if row == 2 { row = 0; }
             else { row += 1; }
         }
-        if event == Event::Key(KeyCode::Up.into())    
+        if event == Event::Key(KeyCode::Left.into())    
         {
             if column == 0 { column = 2;}
             else { column -= 1; }
         }
-        if event == Event::Key(KeyCode::Down.into())
+        if event == Event::Key(KeyCode::Right.into())
         {
             if column == 2 { column = 0; }
             else { column += 1; }
         }
         if event == Event::Key(KeyCode::Esc.into())
         {
-            closeRequested = true;
+            CLOSE_REQUESTED = true;
         }
         if event == Event::Key(KeyCode::Enter.into())
         {
-            if (board[row][column] == ' ')
+            if BOARD[row][column] == ' '
             {
-                board[row][column] = 'X';
+                BOARD[row][column] = 'X';
                 moved = true;
             }
         }
-        if row    < 0 { row = 2; }
-        if row    > 2 { row = 0; }
-        if column < 0 { column = 2; }
-        if column > 2 { column = 0; }
     }
+    clear();
 }
 
-unsafe fn ComputerTurn()
+unsafe fn computer_turn()
 {
     let mut random : ThreadRng = rand::thread_rng();
-    let mut possibleMoves: Vec<(usize, usize)> = Vec::new();
+    let mut possible_moves: Vec<(usize, usize)> = Vec::new();
     for i in 0..3
     {
         for j in 0..3
         {
-            if board[i][j] == ' '
+            if BOARD[i][j] == ' '
             {
-                possibleMoves.push((i, j));
+                possible_moves.push((i, j));
             }
         }
     }
-    let index = random.gen_range(0..(possibleMoves.len()));
-    let (x, y) = possibleMoves[index];
-    board[x][y] = 'O';
+    let index = random.gen_range(0..(possible_moves.len()));
+    let (x, y) = possible_moves[index];
+    BOARD[x][y] = 'O';
 }
 
-unsafe fn CheckForThree(c: char) -> bool
+unsafe fn check_for_three(c: char) -> bool
 {
     return
-        board[0][0] == c && board[1][0] == c && board[2][0] == c ||
-        board[0][1] == c && board[1][1] == c && board[2][1] == c ||
-        board[0][2] == c && board[1][2] == c && board[2][2] == c ||
-        board[0][0] == c && board[0][1] == c && board[0][2] == c ||
-        board[1][0] == c && board[1][1] == c && board[1][2] == c ||
-        board[2][0] == c && board[2][1] == c && board[2][2] == c ||
-        board[0][0] == c && board[1][1] == c && board[2][2] == c ||
-        board[2][0] == c && board[1][1] == c && board[0][2] == c;
+        BOARD[0][0] == c && BOARD[1][0] == c && BOARD[2][0] == c ||
+        BOARD[0][1] == c && BOARD[1][1] == c && BOARD[2][1] == c ||
+        BOARD[0][2] == c && BOARD[1][2] == c && BOARD[2][2] == c ||
+        BOARD[0][0] == c && BOARD[0][1] == c && BOARD[0][2] == c ||
+        BOARD[1][0] == c && BOARD[1][1] == c && BOARD[1][2] == c ||
+        BOARD[2][0] == c && BOARD[2][1] == c && BOARD[2][2] == c ||
+        BOARD[0][0] == c && BOARD[1][1] == c && BOARD[2][2] == c ||
+        BOARD[2][0] == c && BOARD[1][1] == c && BOARD[0][2] == c;
 }
 
-unsafe fn CheckForFullBoard() -> bool
+unsafe fn check_for_full_board() -> bool
 {
     return
-        board[0][0] != ' ' && board[1][0] != ' ' && board[2][0] != ' ' &&
-        board[0][1] != ' ' && board[1][1] != ' ' && board[2][1] != ' ' &&
-        board[0][2] != ' ' && board[1][2] != ' ' && board[2][2] != ' ';
+        BOARD[0][0] != ' ' && BOARD[1][0] != ' ' && BOARD[2][0] != ' ' &&
+        BOARD[0][1] != ' ' && BOARD[1][1] != ' ' && BOARD[2][1] != ' ' &&
+        BOARD[0][2] != ' ' && BOARD[1][2] != ' ' && BOARD[2][2] != ' ';
 }
 
-unsafe fn RenderBoard()
+unsafe fn render_board()
 {
     println!();
-    println!(" {}  ║  {}  ║  {}", board[0][0], board[0][1], board[0][2]);
+    println!(" {}  ║  {}  ║  {}", BOARD[0][0], BOARD[0][1], BOARD[0][2]);
     println!("    ║     ║");
     println!(" ═══╬═════╬═══");
     println!("    ║     ║");
-    println!(" {}  ║  {}  ║  {}", board[1][0], board[1][1], board[1][2]);
+    println!(" {}  ║  {}  ║  {}", BOARD[1][0], BOARD[1][1], BOARD[1][2]);
     println!("    ║     ║");
     println!(" ═══╬═════╬═══");
     println!("    ║     ║");
-    println!(" {}  ║  {}  ║  {}", board[2][0], board[2][1], board[2][2]);
+    println!(" {}  ║  {}  ║  {}", BOARD[2][0], BOARD[2][1], BOARD[2][2]);
 }
 
-unsafe fn EndGame(message: &str)
+unsafe fn end_game(message: &str)
 {
     clear();
-    RenderBoard();
+    render_board();
     println!();
     print!("{}", message);
 }
@@ -191,5 +187,6 @@ fn flush()
 
 fn cursor(row : usize, column : usize)
 {
-    print!("\033[{};{}H", row, column);
+    print!("\x1B[{};{}H", row + 1, column + 1);
+    flush();
 }

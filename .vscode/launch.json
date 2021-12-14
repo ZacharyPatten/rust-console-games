@@ -7,13 +7,13 @@
 			"type":          "cppdbg",
 			"request":       "launch",
 			"preLaunchTask": "cargo build rock-paper-scissors",
-			"program":       "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors",
-			"cwd":           "${workspaceRoot}/games/rock-paper-scissors/target/debug/",
+			"program":       "${workspaceRoot}/target/debug/rock-paper-scissors",
+			"cwd":           "${workspaceRoot}/target/debug/",
 			"console":       "externalTerminal",
 			"windows":
 			{
 				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
-				"program":   "${workspaceRoot}/games/rock-paper-scissors/target/debug/rock-paper-scissors.exe"
+				"program":   "${workspaceRoot}/target/debug/rock-paper-scissors.exe"
 			}
 		},
 		{
@@ -21,13 +21,13 @@
 			"type":          "cppdbg",
 			"request":       "launch",
 			"preLaunchTask": "cargo build simon",
-			"program":       "${workspaceRoot}/games/simon/target/debug/simon",
-			"cwd":           "${workspaceRoot}/games/simon/target/debug/",
+			"program":       "${workspaceRoot}/target/debug/simon",
+			"cwd":           "${workspaceRoot}/target/debug/",
 			"console":       "externalTerminal",
 			"windows":
 			{
 				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
-				"program":   "${workspaceRoot}/games/simon/target/debug/simon.exe"
+				"program":   "${workspaceRoot}/target/debug/simon.exe"
 			}
 		},
 		{
@@ -35,13 +35,13 @@
 			"type":          "cppdbg",
 			"request":       "launch",
 			"preLaunchTask": "cargo build tic-tac-toe",
-			"program":       "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe",
-			"cwd":           "${workspaceRoot}/games/tic-tac-toe/target/debug/",
+			"program":       "${workspaceRoot}/target/debug/tic-tac-toe",
+			"cwd":           "${workspaceRoot}/target/debug/",
 			"console":       "externalTerminal",
 			"windows":
 			{
 				"type":      "cppvsdbg", // <- ignore false positive "The debug type is not recognized."
-				"program":   "${workspaceRoot}/games/tic-tac-toe/target/debug/tic-tac-toe.exe"
+				"program":   "${workspaceRoot}/target/debug/tic-tac-toe.exe"
 			}
 		}
 	]

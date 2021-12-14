@@ -1,7 +1,8 @@
 {
 	"recommendations":
 	[
+		"vadimcn.vscode-lldb",
 		"ms-vscode.cpptools",
-		"rust-lang.rust",
+		"matklad.rust-analyzer",
 	],
 }
